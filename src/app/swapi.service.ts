@@ -11,10 +11,10 @@ export class SwapiService {
   constructor(private httpSvc: HttpClient) { }
 
   getPlanets() {
-    //let p1 = this.httpSvc.get('https://swapi.co/api/planets');
-    //let p2 = this.httpSvc.get('https://swapi.co/api/planets?page=2');
+    let p1 = this.httpSvc.get('https://swapi.co/api/planets');
+    let p2 = this.httpSvc.get('https://swapi.co/api/planets?page=2');
 
-    //return merge(p1, p2);
+   /*  //return merge(p1, p2);
 
     return this.httpSvc.get('https://swapi.co/api/planets').pipe(
       expand(data => 
@@ -22,6 +22,7 @@ export class SwapiService {
         this.httpSvc.get((<any> data).next) :
         empty()
       )
-    );
+    ); */
+    return merge(p1, p2);
   }
 }
