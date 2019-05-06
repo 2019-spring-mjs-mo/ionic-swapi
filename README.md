@@ -5,3 +5,8 @@
 npm install
 ionic serve
 ```
+
+## To create service
+```sh
+ionic generate service name
+```
