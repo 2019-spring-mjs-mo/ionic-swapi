@@ -33,7 +33,10 @@ export class ListPage implements OnInit {
     this.swapiSvc.getPlanets().subscribe(
       data => {
         console.log(data);
-        this.items = (<{ results: object[] }> data).results.map(item => item.name).sort();
+        this.items = [
+          ...this.items,
+          ...(<any> data).results.map(item => item.name)
+        ].sort();
       },
       error => console.error(error)
     );
