@@ -9,6 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedDataService } from './shared-data.service';
+import { SwapiService } from './swapi.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +23,8 @@ import { SharedDataService } from './shared-data.service';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    SharedDataService
+    SharedDataService,
+    SwapiService
   ],
   bootstrap: [AppComponent]
 })
