@@ -28,7 +28,19 @@ export class ListPage implements OnInit {
     , private swapiSvc: SwapiService
   ) {}
 
+  private foo(stop: boolean = false) {
+
+    console.log('foo()');
+
+    if (!stop) {
+      this.foo(new Date().getSeconds() > 30 ? true : false);
+    }
+  }
+
   ngOnInit() {
+
+    //this.foo();
+
     this.swapiSvc.getPlanets().subscribe(
       data => {
         console.log(data);
